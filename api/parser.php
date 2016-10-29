@@ -20,7 +20,7 @@ function parse($json){
     return $result;
 }
 
-$json = json_decode($json);
+$json = json_decode($json, true);
 if($json['type'] == "transaction.created"){
     $out = parse($json);
     $id = $json['data']['account_id'];
