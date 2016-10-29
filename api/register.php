@@ -18,8 +18,10 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone']))
 	$in->bindParam(":ph", $_POST['phone']);
 	$in->bindParam(":nm", $_POST['name']);
 	$in->execute();
+
+	print_r($in->errorInfo());
 	$redirect_uri = "https://crablab.co.uk/mozno/MonzoSMS/api/add.php";
-	header("location: https://auth.getmondo.co.uk/?client_id=" . MONZO_ID . "&redirect_uri=$redirect_uri&response_type=code&state=$id");
+	//header("location: https://auth.getmondo.co.uk/?client_id=" . MONZO_ID . "&redirect_uri=$redirect_uri&response_type=code&state=$id");
 } else {
 	throw new exception("You have not entered all the required information");
 }
