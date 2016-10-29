@@ -31,7 +31,7 @@ background-color: grey;
 	<input name="name" type="text" class="form-control" placeholder="Your name" required id="usr">
     </div>
     <div class="form-group">
-      <label for="abc">"Your phone number and country coide ie. +44xxxxxxxx":</label>
+      <label for="abc">Your phone number and country code ie. +44xxxxxxxx:</label>
       <input name="phone" type="phone" class="form-control" placeholder="Phone number" required id="abc">
     </div>
     <div class="form-group">
