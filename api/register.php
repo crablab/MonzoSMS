@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require("sitetools.php");
+require("../sitetools.php");
 
 $_POST = array_map("htmlspecialchars", $_POST);
 
