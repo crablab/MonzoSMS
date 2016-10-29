@@ -10,9 +10,9 @@ $db = $sitetools->connect();
 use Twilio\Rest\Client;
 
 
-if('body' == "balance") {
+if($_REQUEST['Body'] == "balance") {
 	$reply = "Your balance is ";
-} elseif('body' == "today") {
+} elseif($_REQUEST['Body'] == "today") {
 	$reply = "You spent "; //. . " today";
 } else {
 	$reply = "Sorry I may not be able to help with that";
