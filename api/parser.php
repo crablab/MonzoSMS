@@ -20,10 +20,10 @@ function parse($json){
     return $result;
 }
 
-$json = json_decode($json, true);
-if($json['type'] == "transaction.created"){
+$test = json_decode($json, true);
+if($test['type'] == "transaction.created"){
     $out = parse($json);
-    $id = $json['data']['account_id'];
+    $id = $test['data']['account_id'];
     $rec = $db->prepare("SELECT * FROM `users` WHERE `monzo_id` = :id");
     $rec->bindParam(":id", $id);
     $rec->execute();
