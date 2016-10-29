@@ -28,7 +28,7 @@ error_reporting(E_ALL);
 
     // Step 3: instantiate a new Twilio Rest Client
     $client = new Client($AccountSid, $AuthToken);
-
+    var_dump($client);
     function sendMessage($number, $message) {
         $sms = $client->account->messages->create(
 
