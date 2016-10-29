@@ -1,3 +1,7 @@
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 <?php
     /* Send an SMS using Twilio. You can run this file 3 different ways:
      *
