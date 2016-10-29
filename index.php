@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<title>Monzo SMS</title>
 <style>
 body { 
@@ -40,7 +40,7 @@ background-color: grey;
     </div>
     <div class="form-group">
       <input name="submit" type="submit" value="Sign up and login to Monzo!" class="form-control" id="pwd">
-    </div>
+    </div>  
   </form>
 </div>
 
