@@ -9,7 +9,7 @@ $db = $sitetools->connect();
 $_POST = array_map("htmlspecialchars", $_POST);
 
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone'])){
-	$in = $db->prepare("INSERT INTO `users` (`ID`, `Email`, `IP_address`, `Name`, `Phone_Number`, `Authentication_Token`) VALUES (:id, :e, :ip, :ph, :nm, null)");
+	$in = $db->prepare("INSERT INTO `Users` (`ID`, `Email`, `IP_address`, `Name`, `Phone_Number`, `Authentication_Token`) VALUES (:id, :e, :ip, :ph, :nm, null)");
 	$id = uniqid();
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$in->bindParam(":id", $id);
