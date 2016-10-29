@@ -1,8 +1,8 @@
 <?php
 //INTIAL CLASSES
 require("vendor/autoload.php");
-define("MOZNO_SECRET", "kSsGNjRrEFRkVKGu1/7edPM6HfYPwPjXV52yw7xi5TZfo+q5AvRfBD3mhzqokeVxODqna3R4n04VeqZ9UCBw");
-define("MOZNO_ID", "oauthclient_00009DofzOpaWfvmDdWwqn");
+define("MONZO_SECRET", "kSsGNjRrEFRkVKGu1/7edPM6HfYPwPjXV52yw7xi5TZfo+q5AvRfBD3mhzqokeVxODqna3R4n04VeqZ9UCBw");
+define("MONZO_ID", "oauthclient_00009DofzOpaWfvmDdWwqn");
 
 class sitetools{
 	
