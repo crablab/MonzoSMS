@@ -18,6 +18,9 @@ class sitetools{
 		$pass = ']^FSHN%h69n/Q_Yk\',-f8\33AW;^6j`m';
 		//now set up connection to db with PDO
 		$db = new PDO($dsn, $user, $pass);
+
+		$this->data = $db;
+		return $this->data;
 	}
 
 
