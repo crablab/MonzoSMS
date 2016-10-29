@@ -9,7 +9,7 @@ $db = $sitetools->connect();
 $_POST = array_map("htmlspecialchars", $_POST);
 
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone'])){
-	$in = $db->prepare("INSERT INTO `Users` (`ID`, `Email`, `IP_address`, `Name`, `Phone_Number`, `Authentication_Token`) VALUES (:id, :e, :ip, :ph, :nm, null)");
+	$in = $db->prepare("INSERT INTO `Users` (`ID`, `Email`, `IP_address`, `Name`, `Phone_Number`, `Authentication_Token`) VALUES (:id, :e, :ip, :nm, :ph, null)");
 	$id = uniqid();
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$in->bindParam(":id", $id);
@@ -18,7 +18,7 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone']))
 	$in->bindParam(":ph", $_POST['phone']);
 	$in->bindParam(":nm", $_POST['name']);
 	$in->execute();
-	
+
 	$redirect_uri = "https://crablab.co.uk/mozno/MonzoSMS/api/add.php";
 	header("location: https://auth.getmondo.co.uk/?client_id=" . MONZO_ID . "&redirect_uri=$redirect_uri&response_type=code&state=$id");
 } else {
