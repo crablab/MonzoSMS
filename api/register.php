@@ -14,7 +14,7 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone']))
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$in->bindParam(":id", $id);
 	$in->bindParam(":e", $_POST['email']);
-	$in->bindParam(":ip", $ip)
+	$in->bindParam(":ip", $ip);
 	$in->bindParam(":nm", $_POST['name']);
 	$in->execute();
 	$redirect_uri = "https://crablab.co.uk/mozno/MonzoSMS/api/add.php";
