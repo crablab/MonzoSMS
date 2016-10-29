@@ -52,4 +52,6 @@ error_reporting(E_ALL);
         "+447400340629" => "Feras",
     );
 
+    sendMessage("+447400340629", "This is a test");
+
 ?>
