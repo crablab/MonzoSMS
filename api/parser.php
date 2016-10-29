@@ -29,7 +29,7 @@ if($test['type'] == "transaction.created"){
     $rec->execute();
 
     $phone = $rec->fetch(PDO::FETCH_ASSOC)['Phone_Number'];
-    echo $phone; 
+    $sitetools->sendMessage($phone, $out);
 }
 
 
