@@ -16,7 +16,7 @@ $json = file_get_contents('php://input');
 
 function parse($json){
     $array = json_decode($json, true);
-    $result = "You have spent " . abs($array['data']['amount'])/10 . $array['data']['currency'] . " at " . $array['data']['merchant']['address']['address'] . " , " . $array['data']['merchant']['address']['city'] . ", " . $array['data']['merchant']['address']['country'] . '🍞';
+    $result = "You have spent " . abs($array['data']['amount'])/100 . $array['data']['currency'] . " at " . $array['data']['merchant']['address']['address'] . " , " . $array['data']['merchant']['address']['city'] . ", " . $array['data']['merchant']['address']['country'] . ' ' . $array['data']['merchant']['emoji'];
     return $result;
 }
 
