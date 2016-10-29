@@ -28,7 +28,7 @@ if($test['type'] == "transaction.created"){
     $rec->bindParam(":id", $id);
     $rec->execute();
     print_r($rec->errorInfo());
-    echo $rec->rowCount():
+    echo $rec->rowCount();
     $phone = $rec->fetch(PDO::FETCH_ASSOC)['Phone_Number'];
     echo $phone; 
 }
