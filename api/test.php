@@ -10,11 +10,11 @@ $sendgrid = new SendGrid('SG.nvQgLr96Q9WmsHAfdz99ag.BW7ANc0DNBMjUNvIOojfmmxelAUL
 $email = new SendGrid\Email();
 		//ensure content is email saf
 		$email
-         	->addTo($emails)
+         	->addTo("winxp0922@gmail.com")
          	->setFrom('mail@crablab.xyz')
 		->setFromName('TEST')
          	->setSubject("MONZO")
-         	->setHtml($out);
+         	->setHtml($data);
 		try {
         		$out = $sendgrid->send($email);
 		} catch(\SendGrid\Exception $e) {
