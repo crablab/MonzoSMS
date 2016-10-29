@@ -27,7 +27,7 @@ if($test['type'] == "transaction.created"){
     $rec = $db->prepare("SELECT * FROM `users` WHERE `monzo_id` = :id");
     $rec->bindParam(":id", $id);
     $rec->execute();
-
+    print_r($rec->errorInfo());
     $phone = $rec->fetch(PDO::FETCH_ASSOC)['Phone_Number'];
     echo $phone; 
 }
