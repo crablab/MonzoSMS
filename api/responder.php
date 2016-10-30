@@ -13,12 +13,22 @@ $user->bindParam(":num", $_POST['phone']);
 $user->execute();
 $id = $user->fetch(PDO::FETCH_ASSOC)['monzo_id'];
 
-$json = file_get_contents(http https://api.monzo.com/balance"
-    "Authorization: Bearer " . MONZO_ID . \
-    "account_id==$id");
-$array = json_decode($json, true);
+// Get cURL resource
+		$curl = curl_init();
+		// Set some options - we are passing in a useragent too here
+		curl_setopt_array($curl, array(
+		    CURLOPT_RETURNTRANSFER => 1,
+		    CURLOPT_URL => 'https://api.monzo.com/balance',
+		    CURLOPT_POST => 1,
+		    CURLOPT_POSTFIELDS => array(
+		        account_id => $id
+		    )
+		));
+		curl_setopt($curl,CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . MONZO_ID]);
 
-if($_REQUEST['Body'] == "balace") {
+$array = json_decode(curl_exec($curl), true);
+
+if($_REQUEST['Body'] == "balance") {
 	$balance = abs($array['data']['balance'])/100 . $array['data']['currency']
 	$reply = "Your balance is $balance";
 } elseif($_REQUEST['Body'] == "today") {
