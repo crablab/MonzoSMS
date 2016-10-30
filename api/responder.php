@@ -8,15 +8,16 @@ require("../sitetools.php");
 $sitetools = new sitetools();
 $db = $sitetools->connect();
 use Twilio\Rest\Client;
+$_POST = json_decode($_POST);
 $user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
-$user->bindParam(":num", $_POST['from']);
+$user->bindParam(":num", $_POST['From']);
 $user->execute();
 $rows = $user->rowCount();
 $data = $user->fetch(PDO::FETCH_ASSOC);
 $id = $data['monzo_id'];
 $token = $data['Authentication_Token'];
 
-$reply = json_encode($_POST['From']);
+$reply = json_encode($data);
 
 //if number exists
 if($rows != 0){
