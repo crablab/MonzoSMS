@@ -9,7 +9,7 @@ $sitetools = new sitetools();
 $db = $sitetools->connect();
 use Twilio\Rest\Client;
 $user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
-$user->bindParam(":num", $_POST['From']);
+$user->bindParam(":num", $_POST['from']);
 $user->execute();
 $rows = $user->rowCount();
 $data = $user->fetch(PDO::FETCH_ASSOC);
