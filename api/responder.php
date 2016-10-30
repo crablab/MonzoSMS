@@ -21,12 +21,15 @@ $id = $user->fetch(PDO::FETCH_ASSOC)['monzo_id'];
 		    CURLOPT_URL => 'https://api.monzo.com/balance',
 		    CURLOPT_POST => 1,
 		    CURLOPT_POSTFIELDS => array(
-		        account_id => $id
+		        account_id => $id,
 		    )
 		));
 		curl_setopt($curl,CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . MONZO_ID]);
 
 $array = json_decode(curl_exec($curl), true);
+
+
+var_dump($array);
 
 if($_REQUEST['Body'] == "balance") {
 	$balance = abs($array['data']['balance'])/100 . $array['data']['currency'];
