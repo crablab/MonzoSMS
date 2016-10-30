@@ -29,7 +29,7 @@ $token = $data['Authentication_Token'];
 		curl_setopt($curl,CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $token]);
 
 $array = json_decode(curl_exec($curl), true);
-
+echo $array;
 if($_REQUEST['Body'] == "balance") {
 	$balance = abs($array["balance"])/100 . $array["currency"];
 	$reply = "Your balance is $balance"; 
