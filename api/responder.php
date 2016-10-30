@@ -30,8 +30,6 @@ $token = $data['Authentication_Token'];
 
 $array = json_decode(curl_exec($curl), true);
 $body = $_REQUEST['Body'];
-if($a = 'How are you?';
-
 if (preg_match('/balance/',$body)) {
 	$balance = $array['currency'];
 	$reply = "Your balance is $balance"; 
