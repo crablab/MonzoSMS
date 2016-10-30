@@ -29,11 +29,11 @@ $id = $user->fetch(PDO::FETCH_ASSOC)['monzo_id'];
 $array = json_decode(curl_exec($curl), true);
 
 if($_REQUEST['Body'] == "balance") {
-	$balance = abs($array['data']['balance'])/100 . $array['data']['currency']
-	$reply = "Your balance is " . $balance; 
+	$balance = abs($array['data']['balance'])/100 . $array['data']['currency'];
+	$reply = "Your balance is $balance"; 
 } elseif($_REQUEST['Body'] == "today") {
-	$today =  abs($array['data']['spend_today'])/100 . $array['data']['currency']
-	$reply = "You spent " . $today . " today";
+	$today =  abs($array['data']['spend_today'])/100 . $array['data']['currency'];
+	$reply = "You spent $today today";
 } else {
 	$reply = "Sorry I may not be able to help with that";
 }
