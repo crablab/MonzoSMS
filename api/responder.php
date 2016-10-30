@@ -8,12 +8,22 @@ require("../sitetools.php");
 $sitetools = new sitetools();
 $db = $sitetools->connect();
 use Twilio\Rest\Client;
+$user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
+$user->bindParam(":num", $_POST['phone']);
+$user->execute();
+$id = $user->fetch(PDO::FETCH_ASSOC)['monzo_id'];
 
+$json = file_get_contents(http https://api.monzo.com/balance"
+    "Authorization: Bearer " . MONZO_ID . \
+    "account_id==$id");
+$array = json_decode($json, true);
 
-if($_REQUEST['Body'] == "balance") {
-	$reply = "Your balance is ";
+if($_REQUEST['Body'] == "balace") {
+	$balance = abs($array['data']['balance'])/100 . $array['data']['currency']
+	$reply = "Your balance is $balance";
 } elseif($_REQUEST['Body'] == "today") {
-	$reply = "You spent "; //. . " today";
+	$today =  abs($array['data']['spend_today'])/100 . $array['data']['currency']
+	$reply = "You spent $today today";
 } else {
 	$reply = "Sorry I may not be able to help with that";
 }
