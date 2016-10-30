@@ -30,9 +30,6 @@ $token = $data['Authentication_Token'];
 
 $array = json_decode(curl_exec($curl), true);
 
-
-var_dump($data);
-
 if($_REQUEST['Body'] == "balance") {
 	$balance = abs($array['data']['balance'])/100 . $array['data']['currency'];
 	$reply = "Your balance is $balance"; 
@@ -43,7 +40,7 @@ if($_REQUEST['Body'] == "balance") {
 	$reply = "Sorry I may not be able to help with that";
 }
 
-// header("content-type: text/xml");
+header("content-type: text/xml");
 
  echo "<Response>
 	<Message>$reply</Message>
