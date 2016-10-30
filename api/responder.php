@@ -30,10 +30,10 @@ $token = $data['Authentication_Token'];
 
 $array = json_decode(curl_exec($curl), true);
 $body = $_REQUEST['Body'];
-if (preg_match('/balance/',$body)) {
+if (strpos($body, 'balance') !== false)) {
 	$balance = $array['currency'];
 	$reply = "Your balance is $balance"; 
-} elseif(preg_match('/today/',$body) {
+} elseif(strpos($a, 'today') !== false) {
 	$today =  abs($array[spend_today])/100 . $array[currency];
 	$reply = "You spent $today today";
 } else {
