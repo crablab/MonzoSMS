@@ -40,7 +40,7 @@ if($_REQUEST['Body'] == "balance") {
 	$reply = "Sorry I may not be able to help with that";
 }
 
-header("content-type: text/xml");
+//header("content-type: text/xml");
 
  echo "<Response>
 	<Message>$reply</Message>
