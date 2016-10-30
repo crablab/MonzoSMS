@@ -30,7 +30,7 @@ $token = $data['Authentication_Token'];
 
 $array = json_decode(curl_exec($curl), true);
 $body = $_REQUEST['Body'];
-if (strpos($body, 'balance') !== false)) {
+if (strpos($body, 'balance') !== false) {
 	$balance = $array['currency'];
 	$reply = "Your balance is $balance"; 
 } elseif(strpos($body, 'today') !== false) {
