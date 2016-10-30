@@ -29,11 +29,11 @@ $token = $data['Authentication_Token'];
 		curl_setopt($curl,CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $token]);
 
 $array = json_decode(curl_exec($curl), true);
-static $body = $_REQUEST['Body'];
-if (strpos($body, 'balance') !== false) {
+$body = $_REQUEST['Body'];
+if (stripos($body, 'balance') !== false) {
 	$balance = $array['currency'];
 	$reply = "Your balance is 45.14 GBP"; 
-} elseif(strpos($body, 'today') !== false) {
+} elseif(stripos($body, 'today') !== false) {
 	$today =  abs($array[spend_today])/100 . $array[currency];
 	$reply = "You spent 0.10 GBP today";
 } else {
