@@ -17,8 +17,6 @@ $data = $user->fetch(PDO::FETCH_ASSOC);
 $id = $data['monzo_id'];
 $token = $data['Authentication_Token'];
 
-$reply = json_encode($data);
-
 //if number exists
 if(2=2){
 	// Get cURL resource
