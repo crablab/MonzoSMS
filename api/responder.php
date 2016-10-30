@@ -44,7 +44,7 @@ if($_REQUEST['From'] == $num) {
 		$reply = "Sorry I may not be able to help with that";
 	}
 } else {
-	$reply = "Sorry this number is not registered"
+	$reply = "Sorry this number is not registered";
 }
 
 	//header("content-type: text/xml");
