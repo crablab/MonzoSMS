@@ -33,7 +33,7 @@ $body = $_REQUEST['Body'];
 if (strpos($body, 'balance') !== false)) {
 	$balance = $array['currency'];
 	$reply = "Your balance is $balance"; 
-} elseif(strpos($a, 'today') !== false) {
+} elseif(strpos($body, 'today') !== false) {
 	$today =  abs($array[spend_today])/100 . $array[currency];
 	$reply = "You spent $today today";
 } else {
