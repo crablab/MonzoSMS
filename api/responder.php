@@ -32,10 +32,10 @@ $array = json_decode(curl_exec($curl), true);
 $body = $_REQUEST['Body'];
 if (strpos($body, 'balance') !== false) {
 	$balance = $array['currency'];
-	$reply = "Your balance is 45.14 GBP $balance"; 
+	$reply = "Your balance is 45.14 GBP"; 
 } elseif(strpos($body, 'today') !== false) {
 	$today =  abs($array[spend_today])/100 . $array[currency];
-	$reply = "You spent 0.10 GBP $today today";
+	$reply = "You spent 0.10 GBP today";
 } else {
 	$reply = "Sorry I may not be able to help with that";
 }
