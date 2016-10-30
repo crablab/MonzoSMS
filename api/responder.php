@@ -18,12 +18,12 @@ $rows = $user->rowCount();
 $data = $user->fetch(PDO::FETCH_ASSOC);
 //ret
 $id = $data['monzo_id'];
-$num = $data['Phone_Number']
+$num = $data['Phone_Number'];
 $token = $data['Authentication_Token'];
 
 //if number exists
-$from = $_POST('From');
-if(1=1) {
+$from = $_POST['From'];
+if(1==1) {
 	// Get cURL resource
 			$curl = curl_init();
 			// Set some options - we are passing in a useragent too here
