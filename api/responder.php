@@ -31,7 +31,7 @@ $token = $data['Authentication_Token'];
 $array = json_decode(curl_exec($curl), true);
 
 if($_REQUEST['Body'] == "balance") {
-	$balance = abs($array['balance'])/100 . $array['currency'];
+	$balance = abs($array["balance"])/100 . $array["currency"];
 	$reply = "Your balance is $balance"; 
 } elseif($_REQUEST['Body'] == "today") {
 	$today =  abs($array['spend_today'])/100 . $array['currency'];
