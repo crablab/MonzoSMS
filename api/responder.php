@@ -4,9 +4,8 @@ $sitetools = new sitetools();
 $db = $sitetools->connect();
 use Twilio\Rest\Client;
 
-
-$user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
 $user->bindParam(":num", $_POST['From']);
+$user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
 $user->execute();
 //get rows and data
 $rows = $user->rowCount();
