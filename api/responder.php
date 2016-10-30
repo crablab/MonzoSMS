@@ -16,7 +16,7 @@ $data = $user->fetch(PDO::FETCH_ASSOC);
 $id = $data['monzo_id'];
 $token = $data['Authentication_Token'];
 
-$reply = json_encode($_POST);
+$reply = json_encode($user->errorInfo());
 
 //if number exists
 if($rows != 0){
