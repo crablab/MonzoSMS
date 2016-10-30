@@ -16,8 +16,10 @@ $data = $user->fetch(PDO::FETCH_ASSOC);
 $id = $data['monzo_id'];
 $token = $data['Authentication_Token'];
 
+$reply = $rows;
+
 //if number exists
-if($rowCount != 0){
+if($rows != 0){
 	// Get cURL resource
 	$curl = curl_init();
 	// Set some options - we are passing in a useragent too here
