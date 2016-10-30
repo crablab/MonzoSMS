@@ -17,7 +17,7 @@ $token = $data['Authentication_Token'];
 
 //if number exists
 $from = $_POST['From'];
-if(1==1) {
+if($from == $num) {
 	// Get cURL resource
 			$curl = curl_init();
 			// Set some options - we are passing in a useragent too here
