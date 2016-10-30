@@ -8,18 +8,22 @@ require("../sitetools.php");
 $sitetools = new sitetools();
 $db = $sitetools->connect();
 use Twilio\Rest\Client;
+
+
 $user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
-$user->bindParam(":num", $_GET['From']);
+$user->bindParam(":num", $_POST['From']);
 $user->execute();
+//get rows and data
 $rows = $user->rowCount();
 $data = $user->fetch(PDO::FETCH_ASSOC);
+//ret
 $id = $data['monzo_id'];
 $num = $data['Phone_Number']
 $token = $data['Authentication_Token'];
 
 //if number exists
-$from = $_REQUEST('From');
-if($from == $num) {
+$from = $_POST('From');
+if(1=1) {
 	// Get cURL resource
 			$curl = curl_init();
 			// Set some options - we are passing in a useragent too here
