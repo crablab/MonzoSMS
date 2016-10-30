@@ -39,7 +39,8 @@ if($_REQUEST['Body'] == "balance") {
 }
 
  header("content-type: text/xml");
+
+ echo "<Response>
+	<Message>$reply</Message>
+</Response>";
 ?>
-<Response>
-	<Message><?php echo $reply ?></Message>
-</Response>
