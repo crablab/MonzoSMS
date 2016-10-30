@@ -34,7 +34,7 @@ if (stripos($body, 'balance') !== false) {
 	$balance = $array['currency'];
 	$reply = "Your balance is 45.14 GBP"; 
 } elseif(stripos($body, 'today') !== false) {
-	$today =  abs($array[spend_today])/100 . $array[currency];
+	$today =  abs($array['spend_today'])/100 . $array['currency'];
 	$reply = "You spent 0.10 GBP today";
 } else {
 	$reply = "Sorry I may not be able to help with that";
