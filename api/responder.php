@@ -9,14 +9,14 @@ $sitetools = new sitetools();
 $db = $sitetools->connect();
 use Twilio\Rest\Client;
 $user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
-$user->bindParam(":num", $_REQUEST['From']);
+$user->bindParam(":num", $_POST['From']);
 $user->execute();
 $rows = $user->rowCount();
 $data = $user->fetch(PDO::FETCH_ASSOC);
 $id = $data['monzo_id'];
 $token = $data['Authentication_Token'];
 
-$reply = $rows;
+$reply = $rows . " " . $data;
 
 //if number exists
 if($rows != 0){
@@ -49,7 +49,7 @@ if($rows != 0){
 
 	 
 } else {
-	 $reply = "Sorry, that number has not been authorised.";
+	//$reply = "Sorry, that number has not been authorised.";
 }
 
 echo "<Response>
