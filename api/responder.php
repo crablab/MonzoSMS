@@ -29,11 +29,13 @@ $token = $data['Authentication_Token'];
 		curl_setopt($curl,CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $token]);
 
 $array = json_decode(curl_exec($curl), true);
+$body = $_REQUEST['Body'];
+if($a = 'How are you?';
 
-if($_REQUEST['Body'] == "balance") {
+if (preg_match('/balance/',$body)) {
 	$balance = $array['currency'];
 	$reply = "Your balance is $balance"; 
-} elseif($_REQUEST['Body'] == "today") {
+} elseif(preg_match('/today/',$body) {
 	$today =  abs($array[spend_today])/100 . $array[currency];
 	$reply = "You spent $today today";
 } else {
