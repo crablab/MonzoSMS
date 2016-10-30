@@ -11,7 +11,9 @@ use Twilio\Rest\Client;
 $user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
 $user->bindParam(":num", $_POST['phone']);
 $user->execute();
-$id = $user->fetch(PDO::FETCH_ASSOC)['monzo_id'];
+$data = $user->fetch(PDO::FETCH_ASSOC);
+$id = $data['monzo_id'];
+$token = $data['Authentication_Token'];
 
 // Get cURL resource
 		$curl = curl_init();
@@ -24,12 +26,12 @@ $id = $user->fetch(PDO::FETCH_ASSOC)['monzo_id'];
 		        'account_id' => $id,
 		    )
 		));
-		curl_setopt($curl,CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . MONZO_ID]);
+		curl_setopt($curl,CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $token]);
 
 $array = json_decode(curl_exec($curl), true);
 
 
-var_dump($array);
+var_dump($data);
 
 if($_REQUEST['Body'] == "balance") {
 	$balance = abs($array['data']['balance'])/100 . $array['data']['currency'];
