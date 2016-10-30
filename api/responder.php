@@ -4,8 +4,8 @@ $sitetools = new sitetools();
 $db = $sitetools->connect();
 use Twilio\Rest\Client;
 
-$user->bindParam(":num", $_POST['From']);
 $user = $db->prepare("SELECT * FROM `Users` WHERE `Phone_Number` = :num");
+$user->bindParam(":num", $_POST['From']);
 $user->execute();
 //get rows and data
 $rows = $user->rowCount();
@@ -17,7 +17,7 @@ $token = $data['Authentication_Token'];
 
 //if number exists
 $from = $_POST['From'];
-if($from == $num) {
+if($from == "+447400340629") {
 	// Get cURL resource
 			$curl = curl_init();
 			// Set some options - we are passing in a useragent too here
