@@ -2,8 +2,8 @@
 //INTIAL CLASSES
 require("vendor/autoload.php");
 use Twilio\Rest\Client;
-define("MONZO_SECRET", "BxaiijwEFpfjbaQsVIOOj+tkgMxb8frQluBiWPj5oTtgx2Xk6+R4lqYZqzZi70Hgmn1RdNw8826d3HN5FA1A");
-define("MONZO_ID", "oauthclient_00009DpEkqecIMW2YwCBM1");
+define("MONZO_SECRET", "k+Jvnx5W+KsYTLjO+dYC/HNVYt1uQswpnbXEd/7pLqlKfW++8SmEEKEqjDVfxcRbnbCDiWVdoXBVOKjdsGZr");
+define("MONZO_ID", "oauthclient_00009DsYfjmN0ehmh55ak5");
 
 class sitetools{
 	
