@@ -34,10 +34,10 @@ if($from == "+447400340629") {
 	$array = json_decode(curl_exec($curl), true);
 	$body = $_REQUEST['Body'];
 	if (stripos($body, 'balance') !== false) {
-		$balance = abs($array['balance'])/100 . $array['currency'];
+		$balance = abs($array["balance"])/100 . " " . $array["currency"];
 		$reply = "Your balance is $balance"; 
 	} elseif(stripos($body, 'today') !== false) {
-		$today =  abs($array['spend_today'])/100 . $array['currency'];
+		$today =  abs($array["spend_today"])/100 . " " . $array["currency"];
 		$reply = "You spent $today today";
 	} else {
 		$reply = "Sorry I may not be able to help with that";
